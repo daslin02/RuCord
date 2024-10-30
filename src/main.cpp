@@ -17,22 +17,9 @@ int main(int argc, char *argcv[])
     QApplication app(argc, argcv);
 
     QMainWindow window;
-
-    QWidget *logWid = new QWidget;
-    QWidget *loginForm = new QWidget;
-    QWidget *central = new QWidget;
-    Ui::W_Aut uiLoginForm;
-    uiLoginForm.setupUi(loginForm);
-   
-    QGridLayout *GL = new QGridLayout(central);
-    QVBoxLayout *VL = new QVBoxLayout(logWid);
-    GL->addWidget(logWid , 0 ,0 ,Qt::AlignCenter);
-    VL->addWidget(loginForm);
-
-    central->setLayout(GL);
-    logWid->setLayout(VL);
-
-    window.setCentralWidget(central);
+    
+    loginWindow log;
+    window.setCentralWidget(&log);
 
     window.setWindowTitle("RuCord");
     window.show();

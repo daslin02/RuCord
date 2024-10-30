@@ -11,7 +11,16 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <iostream>
+#include <qboxlayout.h>
+#include <qdebug.h>
 #include <qfont.h>
+#include <qgridlayout.h>
+#include <qlogging.h>
+#include <qnamespace.h>
+#include <qpushbutton.h>
+#include <qtmetamacros.h>
+#include <qwidget.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -40,7 +49,7 @@ public:
         W_Aut->resize(400, 400);
         W_Aut->setMinimumSize(QSize(400, 400));
         W_Aut->setMaximumSize(QSize(16777215, 16777215));
-        W_Aut->setStyleSheet(QString::fromUtf8("border_radius:16px;"));
+       // W_Aut->setStyleSheet(QString::fromUtf8("border_radius:16px;"));
         verticalLayout = new QVBoxLayout(W_Aut);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         F_name = new QFrame(W_Aut);
@@ -148,10 +157,28 @@ public:
     } // retranslateUi
 
 };
-
 namespace Ui {
     class W_Aut: public Ui_W_Aut {};
 } // namespace Ui
+
+class loginWindow : public QWidget
+{
+    public:
+        explicit  loginWindow(QWidget *parent = nullptr) ;
+        ~loginWindow();
+          
+       
+  public slots:
+       void clickBtn();
+private:
+
+        QWidget *formLog;
+        QGridLayout *GL;
+        QWidget *mainWidget ;
+        QVBoxLayout *VL ;
+        Ui::W_Aut *ui;
+        
+};
 
 QT_END_NAMESPACE
 

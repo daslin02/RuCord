@@ -11,4 +11,5 @@ public:
         wid = new QWidget(this);
         setCentralWidget(wid);
     }
+
 };
