@@ -146,6 +146,8 @@ public:
 "padding-left:15px ;background: #293133;"));
         retranslateUi(W_Aut);
         QMetaObject::connectSlotsByName(W_Aut);
+        L_name->setText("<font color='red'>R</font><font color='blue'>u</font>"
+                "<font color='white'>Cord</font>");
     } // setupUi
 
     void retranslateUi(QWidget *W_Aut)
@@ -170,7 +172,7 @@ class loginWindow : public QWidget
           
        
   public slots:
-       void clickBtn();
+       void loginBtnEvent();
 private:
 
         

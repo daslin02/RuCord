@@ -24,7 +24,7 @@ loginWindow::loginWindow(QWidget *parent ) : QWidget(parent)
     this->setLayout(GL);
     mainWidget->setLayout(VL);
     connect(ui->PB_login , &QPushButton::clicked ,
-           this   , &loginWindow::clickBtn);
+           this   , &loginWindow::loginBtnEvent);
 }
 
 loginWindow::~loginWindow()
@@ -39,11 +39,17 @@ void loginWindow::setStyle()
             "border-radius: 16px;");
 }
 
-void loginWindow::clickBtn()
+void loginWindow::loginBtnEvent()
 {
-    myWindow* win = myWindow::getCurrentWindow();
-    if (win)
+
+    if (!(ui->LE_login->text().isEmpty() && ui->LE_password->text().isEmpty()))
     {
-        win->swapWidget();
+
+        myWindow* win = myWindow::getCurrentWindow();
+        if (win)
+        {
+            win->swapWidget();
+        }
+    
     }
 }
