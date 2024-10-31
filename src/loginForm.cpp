@@ -10,6 +10,7 @@ loginWindow::loginWindow(QWidget *parent ) : QWidget(parent)
     ui = new Ui::W_Aut;
     
 
+    setStyle();
     ui->setupUi(formLog);
 
     GL = new QGridLayout(this);
@@ -24,7 +25,6 @@ loginWindow::loginWindow(QWidget *parent ) : QWidget(parent)
     mainWidget->setLayout(VL);
     connect(ui->PB_login , &QPushButton::clicked ,
             this , &loginWindow::clickBtn);
-
 }
 
 loginWindow::~loginWindow()
@@ -33,7 +33,11 @@ loginWindow::~loginWindow()
     delete mainWidget;
     delete ui;
 }
-
+void loginWindow::setStyle()
+{
+    formLog->setStyleSheet("background: #4D4D4D;" 
+            "border-radius: 16px;");
+}
 
 void loginWindow::clickBtn()
 {

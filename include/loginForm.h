@@ -93,8 +93,6 @@ public:
         QFont font1;
         font1.setPointSize(15);
         LE_login->setFont(font1);
-        LE_login->setStyleSheet(QString::fromUtf8("border-radius: 16px;\n"
-"padding-left:15px;"));
         LE_login->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(LE_login);
@@ -107,8 +105,6 @@ public:
         LE_password->setObjectName(QString::fromUtf8("LE_password"));
         LE_password->setMinimumSize(QSize(0, 50));
         LE_password->setFont(font1);
-        LE_password->setStyleSheet(QString::fromUtf8("border-radius: 16px;\n"
-"padding-left:15px;"));
         LE_password->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(LE_password);
@@ -143,6 +139,11 @@ public:
         verticalLayout->addWidget(F_autForm);
 
 
+
+        LE_login->setStyleSheet(QString::fromUtf8("border-radius: 16px;\n"
+"padding-left:15px; background: #293133;"));
+        LE_password->setStyleSheet(QString::fromUtf8("border-radius: 16px;\n"
+"padding-left:15px ;background: #293133;"));
         retranslateUi(W_Aut);
         QMetaObject::connectSlotsByName(W_Aut);
     } // setupUi
@@ -172,12 +173,14 @@ class loginWindow : public QWidget
        void clickBtn();
 private:
 
+        
         QWidget *formLog;
         QGridLayout *GL;
         QWidget *mainWidget ;
         QVBoxLayout *VL ;
         Ui::W_Aut *ui;
         
+        void setStyle();
 };
 
 QT_END_NAMESPACE
