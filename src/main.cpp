@@ -16,10 +16,9 @@ int main(int argc, char *argcv[])
 
     QApplication app(argc, argcv);
 
-    QMainWindow window;
+    myWindow window;
+  //  loginWindow log;
     
-    loginWindow log;
-    window.setCentralWidget(&log);
 
     window.setWindowTitle("RuCord");
     window.show();

@@ -1,5 +1,5 @@
 #include <loginForm.h>
-
+#include <mainWindow.h>
 
 
 
@@ -24,7 +24,7 @@ loginWindow::loginWindow(QWidget *parent ) : QWidget(parent)
     this->setLayout(GL);
     mainWidget->setLayout(VL);
     connect(ui->PB_login , &QPushButton::clicked ,
-            this , &loginWindow::clickBtn);
+           this   , &loginWindow::clickBtn);
 }
 
 loginWindow::~loginWindow()
@@ -41,5 +41,9 @@ void loginWindow::setStyle()
 
 void loginWindow::clickBtn()
 {
-    std::cout << "clicked" << std::endl;
+    myWindow* win = myWindow::getCurrentWindow();
+    if (win)
+    {
+        win->swapWidget();
+    }
 }

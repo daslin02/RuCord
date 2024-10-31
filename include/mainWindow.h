@@ -1,15 +1,18 @@
 #include <connect.h>
 #include <qmainwindow.h>
-#include <qwidget.h>
+
+
 
 class myWindow : public QMainWindow
 {
 public:
-    QWidget *wid;
-    myWindow(QWidget* parent= nullptr): QMainWindow(parent)
-    {
-        wid = new QWidget(this);
-        setCentralWidget(wid);
-    }
+    explicit myWindow(QMainWindow *parent= nullptr);
+    ~myWindow();
+    static myWindow* getCurrentWindow();
+    void swapWidget();
 
+private:
+    static myWindow* window;
+    QWidget *loginWidget;
+    QWidget *homeWidget;
 };
